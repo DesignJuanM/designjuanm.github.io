@@ -2,15 +2,16 @@
 @import url("https://fonts.googleapis.com/css?family=Quicksand");
 @import url("https://use.fontawesome.com/releases/v5.8.1/css/all.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css");
+:root {
+ color-scheme: dark light;
+}
 * {
   margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  /* background: linear-gradient(35deg, #004045, #000000, #001d0b, #000000); */
-  background: #181818;
-  color: #fff;
+  background-color: var(--background-color);
   font-family: "roboto" sans-serif;
 }
 .s100 {
@@ -32,11 +33,9 @@ body {
 #tw {
   color: #6441a5;
 }
-/* cotenedor y elementos */
-/* cotenedor y elementos */
+/* container y orden */
 .container {
-  /* outline: 2px solid #000; */
-  width: 100%;
+  width: 90%;
   max-width: 1200px;
   height: 100vh;
   margin: auto;
@@ -54,7 +53,6 @@ body {
 }
 .element {
   display: grid;
-  padding: 1%;
 }
 .element1 {
   grid-area: menu;
@@ -90,39 +88,102 @@ body {
 }
 /* menu */
 /* menu */
-.element nav {
-  color: #fff;
-  text-decoration: none;
-  margin-right: 10px;
+.menu {
+  margin: 0;
+  width: 100%;
+  max-width: 1200px;
+  overflow: hidden;
 }
-.menus1 .menu {
+.menus1 .menusombra {
   border-radius: 6px;
   position: relative;
   display: inline-block;
-  padding: 10px;
+  padding: 4px;
   color: #fff;
   text-decoration: none;
   overflow: hidden;
   transition: 0.2s;
 }
-.element .menus1 {
-  display: flex;
+.nav {
+  --state-close: scale(0);
+  --state-hamburguer: scale(1);
+  --state-menu: translate(-100%);
+
+  padding: 10px 4px;
+  display: grid;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 0;
+  grid-template-columns: repeat(2, max-content);
 }
-.element h1 {
-  color: #fff;
+
+.nav:target {
+  --state-menu: translate(0);
+  --state-close: scale(1);
+  --state-hamburguer: scale(0);
+}
+
+.nav__logo {
+  font-size: 2.5rem;
+  z-index: 1;
   font-family: "Concert One";
-  font-size: xx-large;
 }
-.menu:hover {
+
+.nav__hamburguer,
+.nav__close {
+  cursor: pointer;
+  grid-column: -2/-1;
+  grid-row: 1/2;
+  transition: 0.4s transform;
+}
+
+.nav__hamburguer {
+  transform: var(--state-hamburguer);
+}
+
+.nav__close {
+  transform: var(--state-close);
+}
+
+.nav__icon {
+  width: 40px;
+}
+
+.nav__links {
+  background-color: #000;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+
+  display: grid;
+  align-content: center;
+  gap: 2em;
+  padding-left: 5%;
+
+  transform: var(--state-menu);
+  transition: 0.3s transform;
+}
+
+.nav__item {
+  list-style: none;
+}
+
+.nav__link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+.menusombra:hover {
   background: transparent;
   border-radius: 6px;
   box-shadow: 0 0 3px #d6d6d6, 0 0 6px #d6d6d6, 0 0 6px #d6d6d6;
   transition-delay: 1s;
 }
-.menu span {
+.menusombra span {
   border-radius: 6px;
   position: absolute;
   display: block;
@@ -134,7 +195,7 @@ body {
   height: 2px;
   background: linear-gradient(270deg, transparent, #d6d6d6);
 }
-.menu:hover #span3 {
+.menusombra:hover #span3 {
   border-radius: 6px;
   right: 100%;
   transition: 1s;
@@ -147,7 +208,7 @@ body {
   height: 100%;
   background: linear-gradient(180deg, transparent, #d6d6d6);
 }
-.menu:hover #span2 {
+.menusombra:hover #span2 {
   border-radius: 6px;
   top: 100%;
   transition: 1s;
@@ -160,12 +221,50 @@ body {
   height: 100%;
   background: linear-gradient(360deg, transparent, #d6d6d6);
 }
-.menu:hover #span4 {
+.menusombra:hover #span4 {
   border-radius: 6px;
   bottom: 100%;
   transition: 1s;
   transition-delay: 0.75s;
 }
+
+@media (min-width: 768px) {
+  .nav {
+    --state-hamburguer: scale(0);
+    --state-menu: translate(0);
+  }
+
+  .nav:target {
+    --state-close: scale(0);
+  }
+
+  .nav__links {
+    padding: 0;
+    background-color: unset;
+    position: unset;
+    gap: 0.5em;
+    grid-auto-flow: column;
+
+    transform: unset;
+
+    grid-column: -2/-1;
+    grid-row: 1/2;
+  }
+
+  .nav__link {
+    font-size: 1rem;
+    letter-spacing: none;
+  }
+}
+.element1 {
+  z-index: 2;
+}
+.element3,
+.element4,
+.element5 {
+  z-index: 1;
+}
+
 /* SIDEBAR */
 /* SIDEBAR */
 .banner {
@@ -365,14 +464,10 @@ body {
     color: rgb(255, 255, 255);
   }
   .element5 ul li a::before {
-    font-family: "FontAwesome";
-    position: absolute;
-    top: 0;
-    left: 0;
     font-size: 4em;
-    height: 0;
-    overflow: hidden;
-    transition: 0.5s ease-in-out;
+  }
+  .element5 ul li:hover a::before {
+    height: 65%;
   }
 }
 /* FORMULARIO */

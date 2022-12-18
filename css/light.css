@@ -1,0 +1,59 @@
+:root{
+  --background-color:#e5e5e5;
+}
+
+body {
+  color: rgb(0, 0, 0);
+}
+.menus1 .menusombra {
+
+  color: rgb(0, 0, 0);
+
+}
+.element2 {
+
+  color: rgb(0, 0, 0);
+
+}
+.menusombra:hover {
+
+  box-shadow: 0 0 3px #000000, 0 0 6px #000000, 0 0 6px #000000;
+
+}
+#span3 {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #000000);
+}
+
+#span2 {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #000000);
+}
+
+#span4 {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #000000);
+}
+.boton .btn-neon {
+
+  color: rgb(0, 0, 0);
+
+}
+.element5 ul li a .fa-brands {
+  font-size: 6em;
+  color: rgb(0, 0, 0);
+}
+.burbuja {
+
+  background: rgb(0, 0, 0);
+
+}
