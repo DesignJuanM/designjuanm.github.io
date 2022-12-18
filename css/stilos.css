@@ -250,7 +250,7 @@ body {
     grid-column: -2/-1;
     grid-row: 1/2;
   }
-
+  nav__icon
   .nav__link {
     font-size: 1rem;
     letter-spacing: none;
@@ -461,7 +461,7 @@ body {
   }
   .element5 ul li a .fa-brands {
     font-size: 4em;
-    color: rgb(255, 255, 255);
+
   }
   .element5 ul li a::before {
     font-size: 4em;

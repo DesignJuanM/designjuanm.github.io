@@ -5,6 +5,9 @@
 body {
   color: rgb(0, 0, 0);
 }
+.nav__link {
+  color: #000000;
+}
 .menus1 .menusombra {
 
   color: rgb(0, 0, 0);
@@ -48,12 +51,29 @@ body {
   color: rgb(0, 0, 0);
 
 }
+.btn-neon:hover {
+  background: transparent;
+  border-radius: 6px;
+  box-shadow: 0 0 5px #000000, 0 0 10px #000000, 0 0 10px #000000;
+  transition-delay: 1s;
+}
 .element5 ul li a .fa-brands {
   font-size: 6em;
   color: rgb(0, 0, 0);
+}
+.nav__hamburguer, .nav__close{
+  filter: invert(1);
+}
+@media screen and (max-width: 768px) {
+  .element5 ul li a .fa-brands {
+    font-size: 4em;
 }
 .burbuja {
 
   background: rgb(0, 0, 0);
 
+}
+.nav__links {
+  background-color: #e5e5e5;
+}
 }
