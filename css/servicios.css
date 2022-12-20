@@ -119,11 +119,13 @@
   margin: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 8px;
+  grid-template-rows: repeat(2, 1fr); 
+  gap: 4px;
   grid-template-areas:
-    "servicio1 servicio2 servicio3"
-    "servicio4 servicio4 servicio4"
+    "servicio1 "
+    "servicio2"
+    "servicio3"
+    "servicio4" 
     /* ". . ." */;
 }
 .servicio1 {

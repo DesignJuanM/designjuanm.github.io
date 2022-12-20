@@ -469,7 +469,32 @@ body {
   .element5 ul li:hover a::before {
     height: 65%;
   }
+  .s100 {
+    overflow: visible;
+  }
 }
+
+
+/* SERVICIOS */
+/* SERVICIOS */
+
+.servicios {
+  width: 100%;
+  max-width: 1200px;
+  height: 100vh;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 4px;
+  grid-template-areas:
+    "menu menu menu"
+    "servicios servicios servicios"
+    "footer footer footer";
+}
+
+
+
 /* FORMULARIO */
 /* FORMULARIO */
 .formulario {
@@ -692,5 +717,10 @@ body {
   100% {
     bottom: 20vh;
     opacity: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .burbuja {
+    display: none 
   }
 }
