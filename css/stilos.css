@@ -6,6 +6,7 @@
   color-scheme: dark light;
   --ds: #5865f2;
   --tw: #6441a5;
+  --circulo1:#4e4e4e;
 }
 #ds {
   color: var(--ds);
@@ -116,7 +117,6 @@ body {
   padding: 10px 4px;
   display: grid;
   justify-content: space-between;
-  align-items: center;
   grid-template-columns: repeat(2, max-content);
 }
 
@@ -270,18 +270,7 @@ body {
 
 /* SIDEBAR */
 /* SIDEBAR */
-.banner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
-}
-.banner_title h2 {
-  color: #fff;
-  font-size: 60px;
-  font-weight: 800;
-  margin-bottom: 20px;
-}
+
 .banner_img {
   animation: movimiento 2.5s linear infinite;
 }
@@ -495,31 +484,26 @@ body {
     "servicio3 servicio4"
     "footer footer";
 }
-
-/* .servi-content {
-  width: 100%;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 4px;
-  grid-template-areas:
-    "servicio1 servicio2 servicio3"
-    "servicio4 servicio4 servicio4";
-} */
 .element8 {
   justify-content: center;
   align-content: center;
   padding: 1.5em;
   grid-area: servicios;
 }
-.servi_titulo{
-  align-content: center;
-  justify-content: center;
+.servi_titulo {
   grid-area: titulo;
+  padding-bottom: 1%;
+  align-content: center;
+  color: #fff;
+}
+.servi_titulo  h1{
+  display: grid;
+  justify-items: center;
+  align-items: center;
   font-size: 2.5rem;
   font-family: "Concert One";
 }
+
 .servicio1 {
   grid-area: servicio1;
 }
@@ -538,22 +522,6 @@ body {
 .servicio6 {
   grid-area: servicio6;
 }
-
-@media screen and (max-width: 768px) {
-  .servicios {
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(7, 1fr);
-    grid-template-areas:
-      "menu"
-      "titulo"
-      "servicio1"
-      "servicio2"
-      "servicio3"
-      "servicio4"
-      "footer";
-  }
-}
-
 .card {
   position: relative;
 
@@ -563,6 +531,7 @@ body {
   align-items: center;
   transition: 0.5s;
 }
+/* circulo general */
 .card .circle {
   position: absolute;
   top: 0;
@@ -579,7 +548,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #d83133;
+  background: var(--circulo1);
   clip-path: circle(120px at center);
   transition: 0.5s;
 }
@@ -587,6 +556,7 @@ body {
   background: #0065c3;
   clip-path: circle(400px at center);
 }
+/* circulo discord */
 .card .circleds {
   position: absolute;
   top: 0;
@@ -603,7 +573,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #d83133;
+  background: var(--circulo1);
   clip-path: circle(120px at center);
   transition: 0.5s;
 }
@@ -611,7 +581,7 @@ body {
   background-color: var(--ds);
   clip-path: circle(400px at center);
 }
-
+/* circulo twitch */
 .card .circletw {
   position: absolute;
   top: 0;
@@ -628,7 +598,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #d83133;
+  background: var(--circulo1);
   clip-path: circle(120px at center);
   transition: 0.5s;
 }
@@ -647,7 +617,7 @@ body {
 }
 .card:hover img {
   left: 75%;
-  height: 280px;
+  height: 260px;
 }
 .card .content {
   position: relative;
@@ -693,7 +663,23 @@ body {
   font-weight: 700;
   transition: 0.5s;
 }
-
+@media screen and (max-width: 768px) {
+  .servicios {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-areas:
+      "menu"
+      "titulo"
+      "servicio1"
+      "servicio2"
+      "servicio3"
+      "servicio4"
+      "footer";
+  }
+  .card:hover img {
+    height: 200px;
+  }
+}
 /* FORMULARIO */
 /* FORMULARIO */
 .formulario {
