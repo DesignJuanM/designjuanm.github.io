@@ -6,23 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Servicios</title>
     <link rel="icon" type="image/x-icon" href="/img/logore.png" />
-    <link rel="stylesheet" href="/css/stilos.css" />
-    <link
-      rel="stylesheet"
-      media="(prefers-color-scheme: dark)"
-      href="/css/dark.css"
-    />
-    <link
-      rel="stylesheet"
-      media="(prefers-color-scheme: light)"
-      href="/css/light.css"
-    />
+    <link rel="stylesheet" href="css/stilos.css" />
 
     <script
       src="https://kit.fontawesome.com/e5761c38df.js"
       crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     ></script>
-    <script type="module" src="https://unpkg.com/dark-mode-toggle"></script>
   </head>
   <body>
     <div class="s200">
@@ -32,42 +22,14 @@
             <h2 class="nav__logo">DesignJuanM.</h2>
 
             <ul class="nav__links">
-              <li class="nav__item menus1">
-                <a href="index.html" class="nav__link menusombra">
-                  <span id="span1"></span>
-                  <span id="span2"></span>
-                  <span id="span3"></span>
-                  <span id="span4"></span>
-                  Inicio
-                </a>
+              <li class="nav__item">
+                <a href="index.html" class="nav__link"> Inicio </a>
               </li>
-              <li class="nav__item menus1">
-                <a href="servicios.html" class="nav__link menusombra">
-                  <span id="span1"></span>
-                  <span id="span2"></span>
-                  <span id="span3"></span>
-                  <span id="span4"></span>Servicios</a
-                >
+              <li class="nav__item">
+                <a href="servicios.html" class="nav__link"> Servicios</a>
               </li>
-              <li class="nav__item menus1">
-                <a href="contacto.html" class="nav__link menusombra">
-                  <span id="span1"></span>
-                  <span id="span2"></span>
-                  <span id="span3"></span>
-                  <span id="span4"></span>Contacto</a
-                >
-              </li>
-
-              <li class="nav__item menus1">
-                <div class="nav__link">
-                  <dark-mode-toggle
-                    id="dark-mode-toggle-1"
-                    appearance="toggle"
-                    dark="Oscuro"
-                    light="Claro"
-                    remember="Recordar"
-                  ></dark-mode-toggle>
-                </div>
+              <li class="nav__item">
+                <a href="contacto.html" class="nav__link"> Contacto</a>
               </li>
             </ul>
 
@@ -101,7 +63,15 @@
                 <li>AutoModeracion</li>
                 <li>Tip's y Consejos</li>
               </ul>
-              <a href="">Saber Más</a>
+              <div class="botonser">
+                <a href="servicios/discord.html" class="btn-neonser">
+                  <span id="span1ser"></span>
+                  <span id="span2ser"></span>
+                  <span id="span3ser"></span>
+                  <span id="span4ser"></span>
+                  Saber Más
+                </a>
+              </div>
             </div>
             <img src="/img/discord2.png" alt="" />
           </div>
@@ -113,12 +83,20 @@
               <h2>Twitch</h2>
               <h3>Configuracion, OBS y más</h3>
               <ul>
-                <li> Moderacion de Canales</li>
+                <li>Moderación de Canales</li>
                 <li>Configuracion de Canales</li>
                 <li>Personalizacion - Diseños</li>
                 <li>OBS - Configuracion y más</li>
               </ul>
-              <a href="">Saber Más</a>
+              <div class="botonser">
+                <a href="servicios/twitch.html" class="btn-neonser">
+                  <span id="span1ser"></span>
+                  <span id="span2ser"></span>
+                  <span id="span3ser"></span>
+                  <span id="span4ser"></span>
+                  Saber Más
+                </a>
+              </div>
             </div>
             <img src="/img/twitch2.png" alt="" />
           </div>
@@ -149,8 +127,17 @@
             <img src="/img/excel.png" alt="" />
           </div>
         </div> -->
-        <div class="element6 element">@DesignJuanM 2022 - 2023</div>
+        <div class="element6 element" id="footer">
+          <p class="copyright">
+            @DesignJuanM 2022 -
+            <script>
+              var d = new Date();
+              document.write(+d.getFullYear());
+            </script>
+          </p>
+        </div>
       </section>
     </div>
+    <script src="/js/oscuro.js"></script>
   </body>
 </html>
